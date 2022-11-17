@@ -13,6 +13,6 @@
 <style>
     .header{
         background-color: yellow;
-        color: white;
+        color: black;
     }
 </style>
