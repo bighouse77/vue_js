@@ -1,5 +1,53 @@
 <template>
-  <h1 :class="{ 'title' : false, 'title-home' : isHome }">
+
+  <div>
+    Two-Way data binding <br>
+    One-Way data biding <br>
+    v-model -> formulários
+  </div>
+
+  <br><br>
+
+  <div>
+    <label>Name</label> <br>
+    <input type="text" v-model="name">
+
+    <br> <br>
+
+    {{ name }}
+
+    <br><br>
+  </div>
+
+  <div>
+    <label>Sports</label> <br>
+    <select v-model="sports">
+      <option value="futebol">Futebol</option>
+      <option value="handball">Handball</option>
+      <option value="volei">Volei</option>
+      <option value="basquete">Basquete</option>
+    </select>
+
+    <br><br>
+
+    {{ sports }}
+
+    <br><br>
+
+    <div>
+      <label>Newslatter</label> <br>
+      <input v-model="newslatter" type="radio" value="sim">Sim <br>
+      <input v-model="newslatter" type="radio" value="não">Não
+    </div>
+
+    <br><br>
+
+    {{ newslatter }}
+
+  </div>
+
+  <!--DIRETRIZES-->
+  <!-- <h1 :class="{ 'title' : false, 'title-home' : isHome }">
     Curso Vue 3
   </h1>
 
@@ -10,7 +58,7 @@
   <div v-for="(obj, index) in todos" :key="obj.id" class="todos-item">
     <img v-if="obj.imgSrc" :src="obj.imgSrc">
     {{ index }} {{ obj.title }}
-  </div>
+  </div> -->
 </template>
 
 
@@ -20,43 +68,49 @@
     name: 'App' ,
     data() {
       return {
-        classVar: "title",
-        pClass: ['text', 'text-home'],
-        isHome: true,
-        todos: [
-          {
-            "userId": 1,
-            "id": 1,
-            "title": "delectus aut autem",
-            "completed": false,
-            "imgSrc": "https://via.placeholder.com/150",
-          },
-          {
-            "userId": 1,
-            "id": 2,
-            "title": "quis ut nam facilis et officia qui",
-            "completed": false,
-            "imgSrc": "https://via.placeholder.com/150",
-          },
-          {
-            "userId": 1,
-            "id": 3,
-            "title": "fugiat veniam minus",
-            "completed": false
-          },
-          {
-            "userId": 1,
-            "id": 4,
-            "title": "et porro tempora",
-            "completed": true
-          },
-          {
-            "userId": 1,
-            "id": 5,
-            "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-            "completed": false
-          }
-        ]
+
+        name: "",
+        sports: "",
+        newslatter: ""
+
+        // DIRETRIZES
+        // classVar: "title",
+        // pClass: ['text', 'text-home'],
+        // isHome: true,
+        // todos: [
+        //   {
+        //     "userId": 1,
+        //     "id": 1,
+        //     "title": "delectus aut autem",
+        //     "completed": false,
+        //     "imgSrc": "https://via.placeholder.com/150",
+        //   },
+        //   {
+        //     "userId": 1,
+        //     "id": 2,
+        //     "title": "quis ut nam facilis et officia qui",
+        //     "completed": false,
+        //     "imgSrc": "https://via.placeholder.com/150",
+        //   },
+        //   {
+        //     "userId": 1,
+        //     "id": 3,
+        //     "title": "fugiat veniam minus",
+        //     "completed": false
+        //   },
+        //   {
+        //     "userId": 1,
+        //     "id": 4,
+        //     "title": "et porro tempora",
+        //     "completed": true
+        //   },
+        //   {
+        //     "userId": 1,
+        //     "id": 5,
+        //     "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+        //     "completed": false
+        //   }
+        // ]
       }
     }
   }
@@ -65,7 +119,7 @@
 
 
 <style>
-  .text {
+  /* .text {
     color: blue;
   }
 
@@ -91,7 +145,7 @@
     margin: 0 0 5px 0;
     padding: 3px 6px;
     color: white;
-  }
+  } */
 
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
