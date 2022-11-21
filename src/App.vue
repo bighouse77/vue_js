@@ -1,5 +1,25 @@
 <template>
 
+  <!--CICLO DE VIDA-->
+  <div>
+    <TheHeader v-if="showHeader"/>
+
+    <h1>Hello World</h1>
+
+    <br><br>
+
+    <input v-model="name" type="text">
+    {{ name }}
+
+    <br><br>
+
+    <button @click="showHeader = !this.showHeader">
+      Ativar e desativar o header
+    </button>
+
+  </div>
+  <!--FIM CICLO DE VIDA-->
+
   <!--OBSERVADORES (WATCH)-->
   <div>
     <!--
@@ -31,10 +51,6 @@
   </div>
   <!--FIM OBSERVADORES (WATCH)-->
 
-
-
-  
-
   <!--PROPRIEDADES COMPUTADAS (FILTRO)-->
   <div>
     <!--
@@ -65,10 +81,6 @@
   </div>
   <!--FIM PROPRIEDADES COMPUTADAS-->
 
-
-
-
-
   <!--EVENTOS-->
   <div>
     <!--
@@ -94,10 +106,6 @@
     -->
   </div>
   <!--FIM EVENTOS-->
-
-
-
-
 
   <!--LIGAÇÃO DE DADOS (v-model)-->
   <div>
@@ -151,10 +159,6 @@
   </div>
   <!--FIM LIGAÇÃO DE DADOS (v-model)-->
   
-
-
-
-
   <!--DIRETRIZES-->
   <div>
     <!--
@@ -178,17 +182,18 @@
 
 <script>
 
+  import TheHeader from '@/components/TheHeader';
+
   export default {
     name: 'App' ,
+    components: {TheHeader},
     data() {
       return {
 
         // CICLO DE VIDA (LIFE CYCLE)
-        name: 'Maurício Casagrande'
+        name: 'Maurício Casagrande',
+        showHeader: true
         // FIM CICLO DE VIDA (LIFE CYCLE)
-
-
-
 
         // OBSERVADORES (WATCH)
         /*
@@ -201,9 +206,6 @@
         */
         // FIM OBSERVADORES (WATCH)
 
-
-
-
         // PROPRIEDADES COMPUTADAS
         /*
         user: {
@@ -213,10 +215,6 @@
         // FIM PROPRIEDADES COMPUTADAS
         */
 
-
-
-
-
         // LIGAÇÃO DE DADOS
         /*
         name: "",
@@ -224,10 +222,6 @@
         newslatter: ""
         // FIM LIGAÇÃO DE DADOS
         */
-
-
-
-
 
         // DIRETRIZES
         /*
@@ -237,7 +231,6 @@
         */
         // FIM DIRETRIZES
         
-
         // RECURSO UTILIZADO EM AULA
         /*
         todos: [
@@ -305,10 +298,6 @@
       */
       // FIM EVENTOS
 
-
-
-
-
       // OBESERVADORES (WATCH)
       /*
       saveUserName() {
@@ -338,7 +327,6 @@
         return this.todos.filter(a => a.completed);
       }
       */
-
     },
 
     watch: {
@@ -369,42 +357,56 @@
     },
 
     // CICLO DE VIDA DO COMPONENTE
-    
-    // H O O K S
+    // HOOKS
+    // $el -> você pegar o elemento raiz do componente (elemento DOM)
+
+    beforeUpdate() {
+      console.log('beforeUpdate');
+    },
+
+    updated() {
+      console.log('updated');
+    }
 
     // antes de criar
-    beforeCreate() {
-      console.log('beforeCreate'); 
-      console.log('Estado:', this.name);   
-    },
+    // beforeCreate() {
+    //   console.log('beforeCreate'); 
+    //   console.log('Estado:', this.name);
+    //   console.log('DOM:', this.$el);
+    // },
 
-    // depois de criado
-    created() {
-      console.log('created');
-      console.log('Estado:', this.name);
-    },
+    // // depois de criado
+    // created() {
+    //   console.log('created');
+    //   console.log('Estado:', this.name);
+    //   console.log('DOM:', this.$el);
+    // },
 
-    // antes de ser montado
-    beforeMount() {
-      console.log('beforeMount');
-      console.log('Estado:', this.name);
-    },
+    // // antes de ser montado
+    // beforeMount() {
+    //   console.log('beforeMount');
+    //   console.log('Estado:', this.name);
+    //   console.log('DOM:', this.$el);
+    // },
 
-    // depois de montado
-    mounted() {
-      console.log('mounted');
-      console.log('Estado:', this.name);
-    },
+    // // depois de montado
+    // mounted() {
+    //   console.log('mounted');
+    //   console.log('Estado:', this.name);
+    //   console.log('DOM:', this.$el);
+    // },
 
-    // antes de desmontar
-    beforeUnmount() {
-      console.log('beforeUnmounted');
-    },
+    // // antes de desmontar
+    // beforeUnmount() {
+    //   console.log('beforeUnmounted');
+    //   console.log('DOM:', this.$el);
+    // },
 
-    // desmontado
-    unmounted() {
-      console.log('unmounted');
-    }
+    // // desmontado
+    // unmounted() {
+    //   console.log('unmounted');
+    //   console.log('DOM:', this.$el);
+    // }
     // FIM CICLO DE VIDA DO COMPONENTE
 
   }
