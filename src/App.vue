@@ -1,14 +1,21 @@
 <template>
 
+  <!--ENVIANDO DADOS PARA COMP FILHO (PROPS)-->
+  <div>
+    <BaseAlert :variant="success" />
+  </div>
+  <!--FIM ENVIANDO DADOS PARA COMP FILHO (PROPS)-->
+
   <!--SCOPED E GLOBAL CSS-->
   <div>
-
+    <!--
     <div class="card">
       Teste
     </div>
 
     <BaseCard/>
-    
+    <BaseCard/>
+    -->
   </div>
   <!--FIM SCOPED E GLOBAL CSS-->
   
@@ -215,11 +222,12 @@
 <script>
 
   //import TheHeader from '@/components/TheHeader';
-  import BaseCard from '@/components/BaseCard.vue';
+  //import BaseCard from '@/components/BaseCard.vue';
+  import BaseAlert from '@/components/BaseAlert.vue';
 
   export default {
     name: 'App' ,
-    components: { BaseCard },
+    components: { BaseAlert },
   
     data() {
       return {
