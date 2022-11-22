@@ -1,7 +1,30 @@
 <template>
 
+  <BaseCard/>
+  
+
+  <!--COMPONENTES SLOT-->
+  <div>
+    <!--
+    <TheHeader>
+
+      <template v-slot:title>
+        Home
+      </template>
+
+      <template v-slot:description>
+        Descrição
+      </template>
+
+    </TheHeader>
+    -->
+
+  </div>
+  <!--FIM COMPONENTES SLOT-->
+
   <!--CICLO DE VIDA-->
   <div>
+    <!--
     <TheHeader v-if="showHeader"/>
 
     <h1>Hello World</h1>
@@ -16,7 +39,7 @@
     <button @click="showHeader = !this.showHeader">
       Ativar e desativar o header
     </button>
-
+    -->
   </div>
   <!--FIM CICLO DE VIDA-->
 
@@ -182,17 +205,19 @@
 
 <script>
 
-  import TheHeader from '@/components/TheHeader';
+  //import TheHeader from '@/components/TheHeader';
+  import BaseCard from '@/components/BaseCard.vue';
 
   export default {
     name: 'App' ,
-    components: {TheHeader},
+    components: { BaseCard },
+  
     data() {
       return {
 
         // CICLO DE VIDA (LIFE CYCLE)
-        name: 'Maurício Casagrande',
-        showHeader: true
+        // name: 'Maurício Casagrande',
+        // showHeader: true
         // FIM CICLO DE VIDA (LIFE CYCLE)
 
         // OBSERVADORES (WATCH)
