@@ -359,15 +359,13 @@
     // CICLO DE VIDA DO COMPONENTE
     // HOOKS
     // $el -> você pegar o elemento raiz do componente (elemento DOM)
+    // beforeUpdate() {
+    //   console.log('beforeUpdate', this.name);
+    // },
 
-    beforeUpdate() {
-      console.log('beforeUpdate');
-    },
-
-    updated() {
-      console.log('updated');
-    }
-
+    // updated() {
+    //   console.log('updated', this.name);
+    // }
     // antes de criar
     // beforeCreate() {
     //   console.log('beforeCreate'); 

@@ -5,7 +5,12 @@
 </template>
 
 <script>
-    export default {
+    export default {     
+        // depois de montado
+        mounted() {
+            window.addEventListener('resize', this.resize);
+        },
+        
          // antes de ser montado
         beforeMount() {
             // destruir as nossas libs
@@ -16,12 +21,12 @@
             console.log('DOM:', this.$el);
         },
 
-        // depois de montado
-        mounted() {
-            console.log('mounted');
-            console.log('Estado:', this.name);
-            console.log('DOM:', this.$el);
+        methods: {
+            resize($evt) {
+                console.log($evt);
+            }
         }
+        
     }
 </script>
 
