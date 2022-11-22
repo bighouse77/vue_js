@@ -5,3 +5,14 @@
     </div>
 
 </template>
+
+<style scoped>
+
+    .card {
+        background-color:blueviolet;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+</style>

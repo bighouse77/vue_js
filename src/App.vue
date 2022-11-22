@@ -1,8 +1,17 @@
 <template>
 
-  <BaseCard/>
-  
+  <!--SCOPED E GLOBAL CSS-->
+  <div>
 
+    <div class="card">
+      Teste
+    </div>
+
+    <BaseCard/>
+    
+  </div>
+  <!--FIM SCOPED E GLOBAL CSS-->
+  
   <!--COMPONENTES SLOT-->
   <div>
     <!--
