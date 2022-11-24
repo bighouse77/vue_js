@@ -1,8 +1,20 @@
 <template>
 
   <!--ENVIANDO DADOS PARA COMP FILHO (PROPS)-->
+  <!--ENVIANDO DADOS PARA COMP PAI (EMIT)-->
   <div>
-    <BaseAlert :variant="success" />
+    <!--
+      Props é diferente de Slot.
+      PROPS: utilizado para comportamento do componente
+      SLOT: é o conteúdo do component
+    -->
+    <BaseAlert
+      v-if="showAlert" 
+      :variant="variant"
+      @close="onClose"
+    >
+      {{ text }}
+    </BaseAlert>
   </div>
   <!--FIM ENVIANDO DADOS PARA COMP FILHO (PROPS)-->
 
@@ -232,6 +244,13 @@
     data() {
       return {
 
+        // ENVIANDO DADOS PARA COMP FILHO (PROPS) 
+        // ENVIANDO DADOS PARA COMP PAI (EMIT)
+        showAlert: true,
+        variant: 'success',
+        text: 'Seu formulário foi enviado'
+        // FIM ENVIANDO DADOS PARA COMP FILHO (PROPS)
+
         // CICLO DE VIDA (LIFE CYCLE)
         // name: 'Maurício Casagrande',
         // showHeader: true
@@ -315,6 +334,13 @@
     },
 
     methods: {
+
+      // CAPTURANDO EVENTO DO FILHO (EMIT)
+      onClose(){
+        this.showAlert = false;
+        console.log('onClose');
+      }
+      // FIM CAPTURANDO EVENTO DO FILHO (EMIT)
 
       // EVENTOS
       /*
