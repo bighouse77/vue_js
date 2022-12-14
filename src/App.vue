@@ -9,10 +9,16 @@
 </template>
 
 <script>
+
   export default{
     data() {
       return {
-        rotaDinamica : { name: 'servicos' }
+        rotaDinamica : { name: 'servicos' },
+        user: {
+          first_name: 'Maurício',
+          last_name: 'Casagrande',
+          email: 'mauricio@gmail'
+        }
       }
     }
   }
